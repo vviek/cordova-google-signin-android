@@ -10,10 +10,10 @@
     },
     "repository": {
       "type": "git",
-      "url": "git+https://github.com/enterprise-touch/cordova-plugin-idnow.git"
+      "url": "git+https://github.com/vviek/cordova-google-signin-android.git"
     },
     "keywords": [
-      "idnow","cordova","android"
+      "google signin","cordova","android"
     ],
     "engines": [
       {
@@ -24,7 +24,7 @@
     "author": "Vivek Patel<vivek.patel371@gmail.com>",
     "license": "MIT",
     "bugs": {
-      "url": "https://github.com/enterprise-touch/cordova-plugin-idnow/issues"
+      "url": "https://github.com/vviek/cordova-google-signin-android/issues"
     },
-    "homepage": "https://github.com/enterprise-touch/cordova-plugin-idnow"
+    "homepage": "https://github.com/vviek/cordova-google-signin-android"
   }
