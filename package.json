@@ -1,0 +1,30 @@
+{
+    "name": "cordova-google-signin-android",
+    "version": "0.0.1",
+    "description": "An Android Cordova plugin for Google SignIn.",
+    "cordova": {
+      "id": "cordova-google-signin-android",
+      "platforms": [
+        "android"
+      ]
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/enterprise-touch/cordova-plugin-idnow.git"
+    },
+    "keywords": [
+      "idnow","cordova","android"
+    ],
+    "engines": [
+      {
+        "name": "cordova",
+        "version": ">=3.0.0"
+      }
+    ],
+    "author": "Vivek Patel<vivek.patel371@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/enterprise-touch/cordova-plugin-idnow/issues"
+    },
+    "homepage": "https://github.com/enterprise-touch/cordova-plugin-idnow"
+  }
