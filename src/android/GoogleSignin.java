@@ -40,7 +40,8 @@ implements GoogleApiClient.OnConnectionFailedListener {
     @Override
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
-        //mServerClientId = ACTION_SET_SERVER_CLIENT_ID;
+       
+        mServerClientId= cordova.getActivity().getString(cordova.getActivity().getResources().getIdentifier("GOOGLE_SIGNIN_CLIENTID" , "string", cordova.getActivity().getPackageName()));
     }
 
     @Override
@@ -50,9 +51,7 @@ implements GoogleApiClient.OnConnectionFailedListener {
             login(callbackContext);
         } else if (action.equals(ACTION_LOGOUT)) {
             logout(callbackContext);
-        } else if (action.equals(ACTION_SET_SERVER_CLIENT_ID)) {
-            setServerClientId(args.optString(0), callbackContext);
-        } else if (action.equals(ACTION_SILENT_LOGIN)) {
+        }  else if (action.equals(ACTION_SILENT_LOGIN)) {
             silentLogin(callbackContext);
         } else {
             Log.i(TAG, "This action doesn't exist");
@@ -125,14 +124,7 @@ implements GoogleApiClient.OnConnectionFailedListener {
         }
     }
 
-    private void setServerClientId(String id, CallbackContext callbackContext) {
-        if (mServerClientId != null) {
-            mServerClientId =id;
-            callbackContext.success();
-        } else {
-            callbackContext.error("invalid server client id");
-        }
-    }
+   
 
     private void createGoogleApiClient() {
         //create builder we can manipulate

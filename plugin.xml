@@ -4,6 +4,7 @@
     <description>Cordova Google Signin Plugin</description>
     <license>Apache 2.0</license>
     <keywords>cordova,google,signin,oauth</keywords>
+    <preference name="GOOGLE_SIGNIN_CLIENTID" />
     <js-module src="www/google-signin.js" name="GoogleSignin">
         <clobbers target="GoogleSignin" />
     </js-module>
@@ -26,6 +27,10 @@
             <uses-permission android:name="android.permission.GET_ACCOUNTS" />
             <uses-permission android:name="android.permission.USE_CREDENTIALS" />
         </config-file>	
+        <config-file target="res/values/strings.xml" parent="/*">
+            <string name="GOOGLE_SIGNIN_CLIENTID">$GOOGLE_SIGNIN_CLIENTID</string>
+            
+        </config-file>
 
         <source-file src="src/android/GoogleSignin.java" target-dir="src/com/plugins"/>
     </platform>
