@@ -113,8 +113,9 @@ implements GoogleApiClient.OnConnectionFailedListener {
             Status status = result.getStatus();
             JSONObject response = new JSONObject();
             try {
-                response.put("message", status.getStatusMessage());
+                
                 response.put("code", status.getStatusCode());
+                response.put("message", status.getStatusMessage());
                 Log.d(TAG, "Sucess Plugin" + status.getStatusMessage());
                 mCurrentLoginCallback.error(response);
                 mCurrentLoginCallback = null;
