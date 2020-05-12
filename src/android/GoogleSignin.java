@@ -31,17 +31,16 @@ implements GoogleApiClient.OnConnectionFailedListener {
     private static final String ACTION_SILENT_LOGIN = "silentLogin";
     private static final String ACTION_LOGOUT = "logout";
     private static final String ACTION_REVOKE_ACCESS = "revoke";
-    private static final String FIREBASE_CLIENT_ID = "13146959384-57kh2cs04jn7e86g5rbe6m4g1il3j9i0.apps.googleusercontent.com";
     private GoogleApiClient mGoogleApiClient;
 
     private CallbackContext mCurrentLoginCallback;
 
-    private String mServerClientId = "13146959384-57kh2cs04jn7e86g5rbe6m4g1il3j9i0.apps.googleusercontent.com";
+    private String mServerClientId = ACTION_SET_SERVER_CLIENT_ID;
 
     @Override
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
-        mServerClientId = "13146959384-57kh2cs04jn7e86g5rbe6m4g1il3j9i0.apps.googleusercontent.com";
+        //mServerClientId = ACTION_SET_SERVER_CLIENT_ID;
     }
 
     @Override
@@ -113,9 +112,8 @@ implements GoogleApiClient.OnConnectionFailedListener {
             Status status = result.getStatus();
             JSONObject response = new JSONObject();
             try {
-                
-                response.put("code", status.getStatusCode());
                 response.put("message", status.getStatusMessage());
+                response.put("code", status.getStatusCode());
                 Log.d(TAG, "Sucess Plugin" + status.getStatusMessage());
                 mCurrentLoginCallback.error(response);
                 mCurrentLoginCallback = null;
@@ -129,7 +127,7 @@ implements GoogleApiClient.OnConnectionFailedListener {
 
     private void setServerClientId(String id, CallbackContext callbackContext) {
         if (mServerClientId != null) {
-            mServerClientId = "13146959384-57kh2cs04jn7e86g5rbe6m4g1il3j9i0.apps.googleusercontent.com";
+            mServerClientId =id;
             callbackContext.success();
         } else {
             callbackContext.error("invalid server client id");
